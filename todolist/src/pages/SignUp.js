@@ -5,7 +5,7 @@ import logo from "../Image/weekly.svg";
 import eyeOff from "../Image/eye-off.svg";
 import eyeOn from "../Image/eye-on.svg";
 
-import "../Style/SignUp.css";
+import "../Style/Sign.css";
 
 const emailRegex =
   /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
@@ -73,16 +73,16 @@ const SignUp = () => {
   return (
     <div className="main">
       <div className="content">
-        <div className="signUpTitle">
+        <div className="title">
           <img className="logo" src={logo} alt="logo" />
-          <div className="toSignIn">
+          <div className="toSignIn_Up">
             <span>이미 회원이신가요?</span>
-            <Link to="/Signin" className="signIn">
+            <Link to="/Signin" className="toMove">
               로그인하기
             </Link>
           </div>
         </div>
-        <form className="signUpForm">
+        <form className="signForm">
           <div className="info">
             <label htmlFor="email">이메일</label>
             <input

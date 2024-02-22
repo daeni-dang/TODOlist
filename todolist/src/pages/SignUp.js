@@ -1,12 +1,14 @@
-﻿import { Link } from "react-router-dom";
+﻿import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import logo from "../Image/weekly.svg";
 import eyeOff from "../Image/eye-off.svg";
 import eyeOn from "../Image/eye-on.svg";
+
 import "../Style/SignUp.css";
-import { Component, useState } from "react";
 
 const emailRegex =
-  /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+  /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 const pwdRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/;
 
 const SignUp = () => {
@@ -15,13 +17,6 @@ const SignUp = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [repasswordError, setRepasswordError] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-  const [passwordType, setPasswordType] = useState("password");
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-    setPasswordType(showPassword ? "password" : "text");
-  };
 
   const emailCheck = (value) => {
     if (!value) {
@@ -50,7 +45,7 @@ const SignUp = () => {
   };
 
   const repwdCheck = (value) => {
-    if (password == "") {
+    if (password === "") {
       setRepasswordError("비밀번호가 올바르지 않아요.");
       return;
     }

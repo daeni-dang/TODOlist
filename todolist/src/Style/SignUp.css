@@ -114,14 +114,16 @@
 }
 
 .focus_red {
-  z-index: 1;
-  outline: none;
+  display: flex;
+  width: 400px;
+  padding: 18px 15px;
+  justify-content: center;
+  align-items: center;
   border-radius: 8px;
   border: 1px solid var(--red);
 }
 
 .focus_red:focus {
-  z-index: 1;
   outline: none;
   border-radius: 8px;
   border: 1px solid var(--red);
